@@ -21,14 +21,16 @@ function UserPortfolios({ login }){
   },[login]);
   
   if(portfolios){
-    let html = ``;
+    let html = `<table class="w3-table w3-striped w3-white">`;
     portfolios.forEach(portfolio => {      
-      let htmlSegment = `<ul>
-                          <li>Portfolio Name: ${ portfolio.portfolioName } </li>
-                          <li>Portfolio Stonks: ${ portfolio.portfolioStonks }</li>
-                        </ul>`;
-      html += htmlSegment;
+      let htmlSegment = `<tr>
+                          <td><i class="fa fa-briefcase w3-text-blue w3-large"></i></td>
+                          <td>${ portfolio.portfolioName }</td>
+                          <td>${ portfolio.portfolioStonks }</td>
+                        </tr>`;
+      html += htmlSegment      
     });
+    html += "</table>";
     return <div> { parse(html) } </div>;
   }
   return null;
