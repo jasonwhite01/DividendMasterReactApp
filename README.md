@@ -1,4 +1,4 @@
-# DividendMasterReactApp
+# DividendMasterReactApp - react.js front end to consume services in DividendMasterAPI
 
 
 # Getting Started with Create React App
