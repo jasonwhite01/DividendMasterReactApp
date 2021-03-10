@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import PortfoliosAndStonks from './components/PortfoliosAndStonks';
+import NewsFeed from './components/NewsFeed';
+
+ReactDOM.render(
+  <NewsFeed stonks="AAPL" />,
+  document.getElementById("news")
+);
 
 ReactDOM.render(
   <PortfoliosAndStonks login="1"/>,
-  document.getElementById("root")
+  document.getElementById("PortfoliosContentPanel")
 );
 
 // If you want to start measuring performance in your app, pass a function
