@@ -18,13 +18,14 @@ function PortfoliosAndStonks({login}){
     if(portfolios){
         let html = `<table class="w3-table w3-striped w3-white">`;
         portfolios.forEach(portfolio => {      
-            let htmlSegment = `<tr><td><i class="fa fa-briefcase w3-text-blue w3-large"></i></td><td><a href="http://localhost:8080">${ portfolio.portfolioName }</a></td><td>${ portfolio.portfolioStonks }</td>`;
-            htmlSegment+= `<td><img src="https://www.knkx.org/sites/kplu/files/styles/x_large/public/201310/Oregon_and_Transcontinental_stock.JPG" width=100 height=75/></td></tr>`;
-            //htmlSegment += `<div id="${ portfolio.portfolioName }" class="w3-hide"><div class="w3-container"><p>${ portfolio.portfolioStonks }</p></div>`;
+            let htmlSegment =   `<tr>
+                                    <td><i class="fa fa-briefcase w3-text-blue w3-large"></i></td><td><a href="http://localhost:8080/portfolio?${ portfolio.portfolioName }">${ portfolio.portfolioName }</a></td>
+                                    <td>${ portfolio.portfolioStonks }</td>
+                                    <td><img src="https://www.knkx.org/sites/kplu/files/styles/x_large/public/201310/Oregon_and_Transcontinental_stock.JPG" width=100 height=75 /></td>
+                                 </tr>`;
             html += htmlSegment         
         });
         html += `</table>`;
-        //html += `<button onClick={logButtonClick}>Hello</button>`;
         return <div> { parse(html) } </div>;
     }
     return null;

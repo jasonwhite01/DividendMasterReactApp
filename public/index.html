@@ -6,23 +6,36 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+  crossorigin="anonymous"
+/>
+
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 </style>
 <body class="w3-light-grey">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">Logo</span>
+  <span class="w3-bar-item w3-right"><img src="/resources/wlslogo.png" style="width:20px"/></span>
 </div>
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
-      <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+      <img src="/resources/avatar.png" class="w3-circle w3-margin-right" style="width:46px">
     </div>
     <div class="w3-col s8 w3-bar">
       <span>Welcome, <strong>Jason</strong></span><br>
@@ -60,30 +73,30 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-red w3-padding-16">
         <div class="w3-left"><i class="fa fa-envelope w3-large"></i></div>
         <div class="w3-right">
-          <h3>0</h3>
+          <h5>0</h5>
         </div>
         <div class="w3-clear"></div>
-        <h4>Messages</h4>
+        <h5>Messages</h5>
       </div>
     </div>
     <div class="w3-third">
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-briefcase w3-large"></i></div>
         <div class="w3-right">
-          <h3>2</h3>
+          <h5>2</h5>
         </div>
         <div class="w3-clear"></div>
-          <h4>Portfolios</h4>
+          <h5>Portfolios</h5>
       </div>
     </div>
     <div class="w3-third">
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-money w3-large"></i></div>
         <div class="w3-right">
-          <h3>8</h3>
+          <h5>8</h5 >
         </div>
         <div class="w3-clear"></div>
-        <h4>Stonks</h4>
+        <h5>Stonks</h5>
       </div>
     </div>
   </div>
@@ -118,9 +131,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-  <hr>
-  
-  <hr>
+ 
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">

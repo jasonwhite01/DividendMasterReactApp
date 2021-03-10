@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import PortfoliosAndStonks from './components/PortfoliosAndStonks';
 import NewsFeed from './components/NewsFeed';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <NewsFeed stonks="AAPL" />,
