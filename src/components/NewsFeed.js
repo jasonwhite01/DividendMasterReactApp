@@ -12,8 +12,8 @@ function NewsFeed({stonks}){
         .then(res => res.json())
         //   .then(setArticles) 
         .then( response => {
-            console.log('Response from main API: ', response)
-            console.log('Article Data: ', response.articles)
+            // console.log('Response from main API: ', response)
+            // console.log('Article Data: ', response.articles)
             setArticles(response.articles)
         })
         .catch(console.error);
