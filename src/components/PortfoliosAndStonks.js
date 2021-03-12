@@ -16,14 +16,25 @@ function PortfoliosAndStonks({login}){
     },[login])
     
     if(portfolios){
-        let html = `<table class="w3-table w3-striped w3-white">`;
+        let html = `<table class="w3-table w3-white">`;
         portfolios.forEach(portfolio => {      
-            let htmlSegment =   `<tr>
-                                    <td><i class="fa fa-briefcase w3-text-blue w3-large"></i></td><td><a href="http://localhost:8080/portfolio?${ portfolio.portfolioName }">${ portfolio.portfolioName }</a></td>
-                                    <td>${ portfolio.portfolioStonks }</td>
-                                    <td><img src="https://www.knkx.org/sites/kplu/files/styles/x_large/public/201310/Oregon_and_Transcontinental_stock.JPG" width=100 height=75 /></td>
-                                 </tr>`;
-            html += htmlSegment         
+            let htmlSegmentPortfolios =   `<tr class="w3-grey">
+                                                <td colspan=3><a href="http://localhost:8080/portfolio?${ portfolio.portfolioName }">${ portfolio.portfolioName }</a></td>
+                                                <td><img src="https://www.knkx.org/sites/kplu/files/styles/x_large/public/201310/Oregon_and_Transcontinental_stock.JPG" width=75 height=50 /></td>
+                                            </tr>`;
+            let portfolioStonksArr = portfolio.portfolioStonks.split(',');
+            let htmlSegmentStonks = ``;//`<table class="w3-table w3-striped w3-white">`;
+            portfolioStonksArr.forEach(stonk => { 
+                htmlSegmentStonks =   `<tr>
+                                        <td><i class="fa fa-money w3-text-blue w3-medium"><a href="http://localhost:8080/stonks?${ stonk }">   ${ stonk }</a></td>
+                                        <td><i class="fa w3-medium">Monthly Payout Per Share: $1</td>
+                                        <td><i class="fa w3-medium">Quarterly Payout Per Share: $11</td>
+                                        <td><i class="fa w3-medium">Annual Payout Per Share: $111</td>
+                                        </tr>`;
+                htmlSegmentPortfolios += htmlSegmentStonks;
+            });  
+            // htmlSegmentPortfolios += `</table>`;                                   
+            html += htmlSegmentPortfolios;         
         });
         html += `</table>`;
         return <div> { parse(html) } </div>;
