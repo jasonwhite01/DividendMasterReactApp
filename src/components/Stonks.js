@@ -4,8 +4,6 @@ import parse from 'html-react-parser';
 function Stonks({portfolioName}){
 
     const [portfolio, setPortfolio] = useState(null);
-    //let apiUrl = `http://localhost:8080/portfolios/portfolio/${portfolioName}`;
-
     useEffect(() => {
         fetch(`http://localhost:8080/portfolios/portfolio/${portfolioName}`, {
             method: 'GET',
@@ -17,26 +15,16 @@ function Stonks({portfolioName}){
         .catch(console.error);
     },[portfolioName])
     
-    if(portfolio){
-        // let stonksListing = portfolio.portfolioStonks;
-        // console.log("StonksListing: " + stonksListing);
-        // let html = `<table class="w3-table w3-striped w3-white">`;
-        // stonksListing.forEach(stonk => {   
-        console.log("portfolio: " + portfolio);
-        console.log("portfoliostonks: " + portfolio[0].portfolioStonks);   
+    if(portfolio){       
         let portfolioStonksArr = portfolio[0].portfolioStonks.split(',');
-        console.log("portfoliostonksArr: " + portfolioStonksArr);   
-
         let html = `<table class="w3-table w3-striped w3-white">`;
         portfolioStonksArr.forEach(stonk => {
-            console.log("stonk: " + stonk);     
+            //console.log("stonk: " + stonk);     
             let htmlSegment =   `<tr>
-                                    <td><i class="fa fa-briefcase w3-text-blue w3-large"></i></td><td><a href="http://localhost:8080/stonks?${ stonk }">${ stonk }</a></td>
-                                    <td><img src="https://www.knkx.org/sites/kplu/files/styles/x_large/public/201310/Oregon_and_Transcontinental_stock.JPG" width=100 height=75 /></td>
+                                    <td><i class="fa fa-money w3-text-blue w3-large"></i></td><td><a href="http://localhost:8080/stonks?${ stonk }">${ stonk }</a></td>
                                  </tr>`;
             html += htmlSegment;
-        });
-        
+        });        
         html += `</table>`;
         return <div> { parse(html) } </div>;
     }
