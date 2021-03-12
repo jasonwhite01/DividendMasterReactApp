@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
+import ReactDOM from 'react-dom';
 
 function NewsFeed({stonks}){
 
@@ -32,5 +33,10 @@ function NewsFeed({stonks}){
         }
         return 'no data available at this time';
 }
+
+ReactDOM.render(
+    <NewsFeed stonks="AAPL" />,
+    document.getElementById("news")
+  )
 
 export default NewsFeed;
