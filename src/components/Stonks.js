@@ -1,34 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
+// import Accordion from 'react-bootstrap/Accordion';
 
 function Stonks({portfolioName}){
-
-    const [portfolio, setPortfolio] = useState(null);
-    useEffect(() => {
-        fetch(`http://localhost:8080/portfolios/portfolio/${portfolioName}`, {
-            method: 'GET',
-            mode: 'cors',
-            credentials: 'same-origin',
-            headers: { Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1BBWUlOR19DVVNUT01FUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9QQVlJTkdfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6IlJPTEVfUEFZSU5HX0NVU1RPTUVSIn0seyJhdXRob3JpdHkiOiJST0xFX1BBWUlOR19DVVNUT01FUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9QQVlJTkdfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6IlJPTEVfUEFZSU5HX0NVU1RPTUVSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn0seyJhdXRob3JpdHkiOiJST0xFX0NTUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9DU1IifSx7ImF1dGhvcml0eSI6IlJPTEVfQ1NSIn0seyJhdXRob3JpdHkiOiJST0xFX0NTUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9DU1IifSx7ImF1dGhvcml0eSI6IlJPTEVfQ1NSIn1dLCJpYXQiOjE2MTUwNTEzMDcsImV4cCI6MTYxNTA1MTkwN30.1T7JZHgqoTsPBGSdJAL8NOKGq70QVAwJumSIZAGIK-I" }
-        }).then(res => res.json())
-        .then(setPortfolio) 
-        .catch(console.error);
-    },[portfolioName])
-    
-    if(portfolio){       
-        let portfolioStonksArr = portfolio[0].portfolioStonks.split(',');
-        let html = `<table class="w3-table w3-striped w3-white">`;
-        portfolioStonksArr.forEach(stonk => {
-            //console.log("stonk: " + stonk);     
-            let htmlSegment =   `<tr>
-                                    <td><i class="fa fa-money w3-text-blue w3-large"></i></td><td><a href="http://localhost:8080/stonks?${ stonk }">${ stonk }</a></td>
-                                 </tr>`;
-            html += htmlSegment;
-        });        
-        html += `</table>`;
-        return <div> { parse(html) } </div>;
-    }
-    return null;
+    return (
+      <h1>Hello</h1>
+    )    
 }
 
 export default Stonks;
