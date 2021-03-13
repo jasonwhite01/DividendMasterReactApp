@@ -1,10 +1,13 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+// import AccordionItem from "./AccordionItem";
+import ReactDOM from 'react-dom';
+import Accordion from './Accordion';
 
 class PortfoliosAndStonks extends React.Component {
 
     state = {
-        portfolios: []
+        portfolios: [],
+        activeIndex: 1        
     }
     
     portfolioExpand() {
@@ -25,21 +28,46 @@ class PortfoliosAndStonks extends React.Component {
     }
 
     render() {
-            return (
-                <div>
-                    {this.state.portfolios.map((portfolio, index) => {
-                            return (                        
-                                <React.Fragment key={index}>
-                                    <button onClick={this.portfolioExpand}>{ portfolio.portfolioName }</button>
-                                    <div className="panel">
-                                        <p>Lorem ipsum...</p>
-                                    </div>
-                                </React.Fragment>
-                            )
-                        })
-                    }
-                </div>
-            )
+        return (  
+            <div>
+                <Accordion portfolios={this.state.portfolios}/>          
+            </div>
+
+            // <div>
+            //     {this.state.portfolios.map((portfolio, index) => {
+                        
+            //             console.log("index: " + index + " this.activeIndex: " + this.activeIndex);
+            //             const showDescription = index === this.activeIndex ? "show-description" : "";
+            //             const fontWeightBold = index === this.activeIndex ? "font-weight-bold" : "";
+            //             const ariaExpanded = index === this.activeIndex ? "true" : "false";
+            //             return (
+            //             <AccordionItem
+            //                 showDescription={showDescription}
+            //                 fontWeightBold={fontWeightBold}
+            //                 ariaExpanded={ariaExpanded}
+            //                 item={portfolio}
+            //                 index={index}
+            //                 key={index}
+            //                 onClick={() => { 
+            //                     console.log("clicked");
+            //                     this.setState({activeIndex: index}); 
+            //                 }}
+            //             />
+            //             )
+                
+                        
+                        // return (                        
+                        //     <React.Fragment key={index}>
+                        //         <button onClick={this.portfolioExpand}>{ portfolio.portfolioName }</button>
+                        //         <div className="panel">
+                        //             <p>Lorem ipsum...</p>
+                        //         </div>
+                        //     </React.Fragment>
+                        // )
+            //         })
+            //     }
+            // </div>
+        )
             // let html = `<table class="w3-table w3-white">`;
             // portfolios.forEach(portfolio => {      
                 // let htmlSegmentPortfolios =   `<tr class="w3-blue">

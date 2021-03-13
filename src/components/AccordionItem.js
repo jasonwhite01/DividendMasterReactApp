@@ -8,7 +8,7 @@ const AccordionItem = ({
   index,
   onClick,
 }) => (
-  <div className="faq__question" key={item.question}>
+  <div className="faq__question" key={item.portfolioName}>
     <dt>
       <button
         aria-expanded={ariaExpanded}
@@ -17,7 +17,7 @@ const AccordionItem = ({
         className={`faq__question-button ${fontWeightBold}`}
         onClick={onClick}
       >
-        {item.question}
+        {item.portfolioName}
       </button>
     </dt>
     <dd>
@@ -26,7 +26,7 @@ const AccordionItem = ({
         data-qa="faq__desc"
         className={`faq__desc ${showDescription}`}
       >
-        {item.answer}
+        {item.portfolioStonks}
       </p>
     </dd>
   </div>
