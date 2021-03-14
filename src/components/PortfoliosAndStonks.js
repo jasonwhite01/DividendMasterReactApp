@@ -10,9 +10,9 @@ class PortfoliosAndStonks extends React.Component {
         activeIndex: 1        
     }
     
-    portfolioExpand() {
-        console.log('clicked');
-    }
+    // portfolioExpand() {
+    //     console.log('clicked');
+    // }
 
     componentDidMount() {
         fetch(`http://localhost:8080/portfolios`, {
@@ -32,41 +32,6 @@ class PortfoliosAndStonks extends React.Component {
             <div>
                 <Accordion portfolios={this.state.portfolios}/>          
             </div>
-
-            // <div>
-            //     {this.state.portfolios.map((portfolio, index) => {
-                        
-            //             console.log("index: " + index + " this.activeIndex: " + this.activeIndex);
-            //             const showDescription = index === this.activeIndex ? "show-description" : "";
-            //             const fontWeightBold = index === this.activeIndex ? "font-weight-bold" : "";
-            //             const ariaExpanded = index === this.activeIndex ? "true" : "false";
-            //             return (
-            //             <AccordionItem
-            //                 showDescription={showDescription}
-            //                 fontWeightBold={fontWeightBold}
-            //                 ariaExpanded={ariaExpanded}
-            //                 item={portfolio}
-            //                 index={index}
-            //                 key={index}
-            //                 onClick={() => { 
-            //                     console.log("clicked");
-            //                     this.setState({activeIndex: index}); 
-            //                 }}
-            //             />
-            //             )
-                
-                        
-                        // return (                        
-                        //     <React.Fragment key={index}>
-                        //         <button onClick={this.portfolioExpand}>{ portfolio.portfolioName }</button>
-                        //         <div className="panel">
-                        //             <p>Lorem ipsum...</p>
-                        //         </div>
-                        //     </React.Fragment>
-                        // )
-            //         })
-            //     }
-            // </div>
         )
             // let html = `<table class="w3-table w3-white">`;
             // portfolios.forEach(portfolio => {      

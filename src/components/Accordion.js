@@ -3,7 +3,6 @@ import AccordionItem from "./AccordionItem";
 
 //source = https://github.com/ALapina/FAQ-Accordion-Card-React/blob/master/src/components/Accordion.js
 
-//const Accordion = ({ contentToRender }) => {
 function Accordion ({portfolios}){
     const [activeIndex, setActiveIndex] = useState(1);
 
@@ -11,11 +10,15 @@ function Accordion ({portfolios}){
         const showDescription = index === activeIndex ? "show-description" : "";
         const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
         const ariaExpanded = index === activeIndex ? "true" : "false";
+        const indexPlus1 = index+1;
+        const ariaControls = "faq" + indexPlus1 + "_desc";
+        // console.log("item: " + item);    
         return (
         <AccordionItem
             showDescription={showDescription}
             fontWeightBold={fontWeightBold}
             ariaExpanded={ariaExpanded}
+            ariaControls={ariaControls}
             item={item}
             index={index}
             key={index}
