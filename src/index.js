@@ -9,10 +9,10 @@ import "./scss/main.scss";
 //   document.getElementById("news")
 // )
 
-ReactDOM.render(
-  <PortfoliosAndStonks login="1"/>,
-  document.getElementById("PortfoliosContentPanel")
-)
+// ReactDOM.render(
+//   <PortfoliosAndStonks login="1"/>,
+//   document.getElementById("PortfoliosContentPanel")
+// )
 
 // ReactDOM.render(
 //   <Stonks/>,

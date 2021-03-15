@@ -1,19 +1,13 @@
 import React from 'react';
-// import AccordionItem from "./AccordionItem";
 import ReactDOM from 'react-dom';
 import Accordion from './Accordion';
 
 class PortfoliosAndStonks extends React.Component {
 
     state = {
-        portfolios: [],
-        activeIndex: 1        
+        portfolios: []       
     }
     
-    // portfolioExpand() {
-    //     console.log('clicked');
-    // }
-
     componentDidMount() {
         fetch(`http://localhost:8080/portfolios`, {
                 method: 'GET',
@@ -30,39 +24,15 @@ class PortfoliosAndStonks extends React.Component {
     render() {
         return (  
             <div>
-                <Accordion portfolios={this.state.portfolios}/>          
+                <Accordion portfolios={this.state.portfolios}/>
             </div>
-        )
-            // let html = `<table class="w3-table w3-white">`;
-            // portfolios.forEach(portfolio => {      
-                // let htmlSegmentPortfolios =   `<tr class="w3-blue">
-                //                                     <td colspan=3><button onclick="console.log('clicked')">${ portfolio.portfolioName }</button></a></td>
-                //                                     <td><img src="https://www.knkx.org/sites/kplu/files/styles/x_large/public/201310/Oregon_and_Transcontinental_stock.JPG" width=75 height=50 /></td>
-                //                                 </tr>`;
-            //     let portfolioStonksArr = portfolio.portfolioStonks.split(',');
-            //     let htmlSegmentStonks = ``;//`<table class="w3-table w3-striped w3-white">`;
-            //     portfolioStonksArr.forEach(stonk => { 
-            //         htmlSegmentStonks =   `<tr>
-            //                                 <td><i class="fa fa-money w3-text-blue w3-medium"><a href="http://localhost:8080/stonks?${ stonk }">   ${ stonk }</a></td>
-            //                                 <td><i class="fa w3-medium">Monthly Payout Per Share: $1</td>
-            //                                 <td><i class="fa w3-medium">Quarterly Payout Per Share: $11</td>
-            //                                 <td><i class="fa w3-medium">Annual Payout Per Share: $111</td>
-            //                                 </tr>`;
-            //         htmlSegmentPortfolios += htmlSegmentStonks;
-            //     });  
-            //     // htmlSegmentPortfolios += `</table>`;                                   
-            //     html += htmlSegmentPortfolios;         
-            // });
-            // html += `</table>`;
-            // return <div> { parse(html) } </div>;
-        // }
-        // return null;
+        )            
     }
 }
 
-// ReactDOM.render(
-//     <PortfoliosAndStonks/>,
-//     document.getElementById("PortfoliosContentPanel")
-//   )
+ReactDOM.render(
+    <PortfoliosAndStonks/>,
+    document.getElementById("PortfoliosContentPanel")
+  )
 
 export default PortfoliosAndStonks;
