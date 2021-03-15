@@ -10,7 +10,7 @@ function Accordion ({portfolios}){
         const showDescription = index === activeIndex ? "show-description" : "";
         const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
         const ariaExpanded = index === activeIndex ? "true" : "false";
-        const ariaControls = "faq" + index + "_desc"; 
+        const ariaControls = "portfolio" + index + "_desc"; 
         return (
         <AccordionItem
             showDescription={showDescription}
@@ -28,8 +28,8 @@ function Accordion ({portfolios}){
     });
 
     return (
-        <div className="faq">
-          <dl className="faq__list">{renderedContent}</dl>
+        <div>
+          <dl>{renderedContent}</dl>
         </div>
       );
 };
