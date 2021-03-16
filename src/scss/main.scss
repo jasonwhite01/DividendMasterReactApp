@@ -55,6 +55,12 @@ button:focus-visible {
   outline-offset: 0px;
 }
 
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; // Undo browser default
+  margin-top: .5rem;
+}
+
 #root {
   width: 100%;
 }

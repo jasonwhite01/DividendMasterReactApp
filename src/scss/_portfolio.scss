@@ -6,12 +6,13 @@
     &__title {
       margin: 0;
       padding-bottom: 25px;
+      
     }
 
     &__portfolioName {
       //max-width: 350px;
       width: 100%;
-      border-bottom: 1px solid $light-grayish-blue;
+      border-bottom: 1px solid $light-grayish-blue;     
     }
 
     &__portfolioName-button {
@@ -19,12 +20,12 @@
       display: flex;
       justify-content: space-between;
       border: none;
-      background-color: transparent;
+      background-color: $soft-blue;
       padding: 0px;
       cursor: pointer;
-
-      padding-top: 18px;
-      padding-bottom: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
 
       &::after {
         content: url(../images/icon-arrow-down.svg);
@@ -46,5 +47,6 @@
       overflow: hidden;
       transition: all 200ms ease-out;
       font-size:12px;
+      background-color: rgb(240, 234, 226);
     }
 }

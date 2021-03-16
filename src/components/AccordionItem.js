@@ -11,6 +11,7 @@ const AccordionItem = ({
   <div className="portfolio__title" key={item.portfolioName}>
     <dt>
       <button
+        data-cy={`portfolio${index+1}`}
         aria-expanded={ariaExpanded}
         aria-controls={`portfolio${index + 1}_desc`}
         data-qa="portfolio__portfolioName-button"
@@ -22,12 +23,14 @@ const AccordionItem = ({
     </dt>    
     <dd>
         {
-            item.portfolioStonks.split(',').map((item, index) => {
+            item.portfolioStonks.split(',').map((item, indexB) => {
                 return (
-                    <React.Fragment key={index}>                        
-                            <p  id={`portfolio${index + 1}_stonk`}
-                                data-qa="portfolio__stonk"
-                                className={`portfolio__stonk ${showDescription}`}
+                    <React.Fragment key={indexB}>                        
+                            <p  
+                              data-cy={`portfolio${index+1}_stonk${indexB}`}
+                              id={`portfolio${indexB + 1}_stonk`}
+                              //data-qa="portfolio__stonk"
+                              className={`portfolio__stonk ${showDescription}`}
                             >
                             { item }
                             </p>                        
