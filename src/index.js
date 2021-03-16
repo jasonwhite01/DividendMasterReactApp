@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PortfoliosAndStonks from './components/PortfoliosAndStonks';
-import './index.css';
+import './css/index.css';
 import "./scss/main.scss";
 
 // ReactDOM.render(
