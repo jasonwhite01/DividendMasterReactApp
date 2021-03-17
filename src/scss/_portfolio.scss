@@ -10,7 +10,7 @@
     }
 
     &__portfolioName {
-      //max-width: 350px;
+      max-width: 350px;
       width: 100%;
       border-bottom: 1px solid $light-grayish-blue;     
     }
@@ -20,7 +20,6 @@
       display: flex;
       justify-content: space-between;
       border: none;
-      background-color: $soft-blue;
       padding: 0px;
       cursor: pointer;
       padding-top: 10px;
@@ -28,7 +27,7 @@
       padding-left: 10px;
 
       &::after {
-        content: url(../images/icon-arrow-down.svg);
+        content: url('../images/icon-arrow-down.svg');
         margin-right: 17px;
         transform: rotate(90deg);
       }

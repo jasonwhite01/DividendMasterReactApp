@@ -6,11 +6,11 @@
   /* Arrows */
   
   /* closed */
-  .portfolio__question-button::after {
+  .portfolio__portfolioName-button::after {
     transition: transform 300ms ease-out; 
   }
   
   /* open */
-  .portfolio-weight-bold::after {
+  .font-weight-bold::after {
     transform: rotate(720deg);
   }

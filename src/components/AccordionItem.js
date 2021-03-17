@@ -14,8 +14,8 @@ const AccordionItem = ({
         data-cy={`portfolio${index+1}`}
         aria-expanded={ariaExpanded}
         aria-controls={`portfolio${index + 1}_desc`}
-        data-qa="portfolio__portfolioName-button"
-        className={`portfolio__portfolioName-button ${fontWeightBold}`}
+        // data-qa="portfolio__portfolioName-button"
+        className={`portfolio__portfolioName-button ${fontWeightBold}, w3-blue`}
         onClick={onClick}
       >
         {item.portfolioName}
